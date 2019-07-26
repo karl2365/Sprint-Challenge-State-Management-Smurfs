@@ -5,9 +5,12 @@ import Smurf from './Smurf';
 
 const Smurfs = () => {
     const { smurfs, setSmurfs } = useContext(SmurfContext);
+
+
+
     return (
         <div>
-            <Smurf />
+            {smurfs.map(smurf => <Smurf smurf={smurf} key={smurf.id} setSmurfs={setSmurfs} />)}
         </div>
     )
 
