@@ -17,6 +17,11 @@
     width: 49%;
     margin-left: 20px;
 }
+.smurfContainer button {
+    background: #335577;
+    border-radius: 10px;
+    color: white;
+}
 
 .mainContainer {
     background: #bbddff;

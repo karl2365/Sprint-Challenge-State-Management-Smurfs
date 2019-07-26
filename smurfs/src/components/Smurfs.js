@@ -32,11 +32,22 @@ const Smurfs = () => {
             .catch(err => console.log(err.response))
   
     }
-
+    
+    const deleteSmurf = id => {
+             
+        Axios
+        .delete(`http://localhost:3333/smurfs/${id}`)
+        .then(res => {
+            console.log(res);
+            window.location.reload();
+          
+        })
+        .catch(err => console.log(err.response))
+    }
     return (
         <div className='mainContainer'>
             <h2 className='header'>Smurfs Again</h2>
-            {smurfs.map(smurf => <Smurf smurf={smurf} key={smurf.id} setSmurfs={setSmurfs} />)}
+            {smurfs.map(smurf => <Smurf smurf={smurf} key={smurf.id} setSmurfs={setSmurfs} deleteSmurf={deleteSmurf} />)}
             <h2 className="formTitle">Add Smurf</h2>
                 <form className='form' onSubmit={handleSubmit}>
                 <div>
