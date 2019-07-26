@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState} from 'react';
 import Axios from 'axios';
 
 import { SmurfContext } from '../contexts/SmurfContext';
@@ -32,11 +32,19 @@ const Smurfs = () => {
             .catch(err => console.log(err.response))
   
     }
-    
+    const updateSmurf = id => {
+        console.log(newSmurf)
+        Axios
+            .put(`http://localhost:3333/smurfs/${id}`, newSmurf)
+            .then(res=> console.log(res))
+            .catch(err => console.log(err))
+        window.location.reload();
+
+    }
     const deleteSmurf = id => {
              
         Axios
-        .delete(`http://localhost:3333/smurfs/${id}`)
+        .delete(`http://localhost:3333/smurfs/${id}`, newSmurf)
         .then(res => {
             console.log(res);
             window.location.reload();
@@ -47,8 +55,9 @@ const Smurfs = () => {
     return (
         <div className='mainContainer'>
             <h2 className='header'>Smurfs Again</h2>
-            {smurfs.map(smurf => <Smurf smurf={smurf} key={smurf.id} setSmurfs={setSmurfs} deleteSmurf={deleteSmurf} />)}
+            {smurfs.map(smurf => <Smurf smurf={smurf} key={smurf.id} setSmurfs={setSmurfs} deleteSmurf={deleteSmurf} updateSmurf={updateSmurf} />)}
             <h2 className="formTitle">Add Smurf</h2>
+            
                 <form className='form' onSubmit={handleSubmit}>
                 <div>
                 <label>Name: </label>

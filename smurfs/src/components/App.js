@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { SmurfContext } from '../contexts/SmurfContext';
 import Smurfs from './Smurfs';
@@ -12,7 +12,6 @@ function App() {
       Axios
       .get('http://localhost:3333/smurfs')
       .then(res => {
-        console.log(res);
         setSmurfs(res.data);
       })
       .catch(err => console.log(err))
