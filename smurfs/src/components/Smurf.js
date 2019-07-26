@@ -1,28 +1,16 @@
-import React, { useEffect, useContext } from 'react';
-import Axios from 'axios';
-import { SmurfContext } from '../contexts/SmurfContext';
+import React from 'react';
+import './components.css';
 
-class Smurf extends React.Component  {
-    constructor(props){
-        super(props);
-        this.state = {
-            name: '',
-            age: 0,
-            height: ''
-        }
-    }
+const Smurf = (props) =>  {
+    return (
+        <div className='smurfContainer'>
+            <p className='smurfName'>Name: {props.smurf.name}</p>
+            <p>Age: {props.smurf.age}</p>
+            <p>Height: {props.smurf.height}</p>
 
+        </div>
+    )
     
-
-
-    render (){
-        return (
-            <div className='smurfContainer'>
-                {this.props.smurf.name}
-  
-            </div>
-        )
-    }    
 }
 
 

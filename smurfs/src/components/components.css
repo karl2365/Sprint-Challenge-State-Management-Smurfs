@@ -1,0 +1,60 @@
+.smurfContainer {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    background: #335577;
+    color: white;
+    font-family: cursive, sans-seif;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+.smurfContainer p {
+    width: 25%;
+    text-align: left;
+}
+.smurfContainer p.smurfName {
+    width: 49%;
+    margin-left: 20px;
+}
+
+.mainContainer {
+    background: #bbddff;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 25px;
+    margin-top: 25px;
+}
+.formTitle {
+
+}
+.form {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50%;
+    margin: 0 auto;
+}
+.form div {
+    display: flex;
+    margin: 5px 0
+
+}
+.form label {
+    width: 30%;
+    text-align: left;
+}
+.form input {
+    outline: none;
+    background: #335577;
+    color: white;
+    border-radius: 5px;
+}
+.form button {
+    background: #335577;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
